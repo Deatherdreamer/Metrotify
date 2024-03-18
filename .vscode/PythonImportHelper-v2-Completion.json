@@ -1,0 +1,415 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "webbrowser",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "webbrowser",
+        "description": "webbrowser",
+        "detail": "webbrowser",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "funciones",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "generate_id",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def generate_id():\n    \"\"\"\n    Genera un UUID (Identificador Único Universal) versión 4.\n    Devuelve:\n        Un string que representa un UUID versión 4.\n    \"\"\"\n    return str(uuid.uuid4())\ndef validate_if_username_exists(username):\n    \"\"\"\n    Valida si un nombre de usuario ya existe en el archivo 'db/usuarios.json'.",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "validate_if_username_exists",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def validate_if_username_exists(username):\n    \"\"\"\n    Valida si un nombre de usuario ya existe en el archivo 'db/usuarios.json'.\n    Parámetros:\n        username (str): El nombre de usuario a validar.\n    Devuelve:\n        bool: True si el nombre de usuario ya existe, False si no.\n    \"\"\"\n    with open(\"db/usuarios.json\", \"r\") as file:\n        users = json.load(file)",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "validate_integer_input",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def validate_integer_input(prompt):\n    \"\"\"\n    Solicita un valor entero al usuario y valida que sea un entero.\n    Parámetros:\n        prompt (str): El mensaje a mostrar al usuario.\n    Devuelve:\n        int: El valor entero ingresado por el usuario.\n    \"\"\"\n    while True:\n        try:",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "validate_integer_input_min_max",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def validate_integer_input_min_max(prompt, min_value, max_value):\n    \"\"\"\n    Solicita un valor entero al usuario y valida que esté dentro de un rango.\n    Parámetros:\n        prompt (str): El mensaje a mostrar al usuario.\n        min_value (int): El valor mínimo permitido.\n        max_value (int): El valor máximo permitido.\n    Devuelve:\n        int: El valor entero ingresado por el usuario.\n    \"\"\"",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "validate_string_input",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def validate_string_input(prompt):\n    \"\"\"\n    Solicita un valor de texto al usuario y valida que no esté vacío.\n    Parámetros:\n        prompt (str): El mensaje a mostrar al usuario.\n    Devuelve:\n        str: El valor de texto ingresado por el usuario.\n    \"\"\"\n    while True:\n        value = input(prompt)",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "select_user_type",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def select_user_type():\n    \"\"\"\n    Solicita al usuario seleccionar un tipo de usuario.\n    El usuario puede seleccionar entre 'admin' y 'user'.\n    Devuelve:\n        str: El tipo de usuario seleccionado.\n    \"\"\"\n    while True:\n        print(\"Seleccione un tipo de usuario: \")\n        print(\"1. Escucha\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "restore_default_data",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def restore_default_data():\n    \"\"\"\n    Restaura los datos por defecto de la aplicación.\n    La función carga los usuarios, álbumes y playlists desde una API y los guarda\n    en los archivos 'db/usuarios.txt', 'db/albums.txt', 'db/canciones.txt' y 'db/playlists.txt'.\n    Devuelve:\n        Un diccionario con los códigos de estado de las respuestas HTTP de cada solicitud.\n    \"\"\"\n    codes = {\n        \"users\": load_users_from_api(),",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "load_users_from_api",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def load_users_from_api():\n    \"\"\"\n    Carga los usuarios desde una API.\n    La función realiza una solicitud GET a la API, parsea la respuesta a JSON,\n    y luego escribe cada usuario en el archivo 'db/usuarios.json'. Cada usuario\n    se escribe en una nueva línea en formato JSON.\n    Al abrir el archivo 'db/usuarios.json' en modo escritura, se borra cualquier\n    contenido existente en el archivo.\n    Devuelve:\n        El código de estado de la respuesta HTTP.",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "load_albums_from_api",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def load_albums_from_api():\n    \"\"\"\n    Carga los álbumes desde una API y guarda la información en archivos JSON.\n    Returns:\n        int: El código de estado de la respuesta HTTP.\n    \"\"\"\n    url = \"https://raw.githubusercontent.com/Algoritmos-y-Programacion/api-proyecto/main/albums.json\"\n    response = requests.get(url)\n    data = response.json()\n    all_tracks = []",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "load_playlists_from_api",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def load_playlists_from_api():\n    \"\"\"\n    Carga las listas de reproducción desde una API y las guarda en un archivo JSON local.\n    Returns:\n        int: Código de estado de la respuesta HTTP.\n    \"\"\"\n    url = \"https://raw.githubusercontent.com/Algoritmos-y-Programacion/api-proyecto/main/playlists.json\"\n    response = requests.get(url)\n    data = response.json()\n    with open(\"db/playlists.json\", \"w\") as file:",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "load_all_data",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def load_all_data():\n    \"\"\"\n    Carga todos los datos de la aplicación desde los archivos 'db/usuarios.json',\n    'db/albums.json', 'db/canciones.json' y 'db/playlists.json'.\n    Devuelve:\n        Un diccionario con los datos cargados.\n    \"\"\"\n    with open(\"db/usuarios.json\") as file:\n        users = json.load(file)\n    with open(\"db/albums.json\") as file:",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "create_new_user",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def create_new_user():\n    \"\"\"\n    Crea un nuevo usuario.\n    La función solicita al usuario ingresar los datos del nuevo usuario, valida\n    que el nombre de usuario no exista, y luego escribe el usuario en el archivo\n    'db/usuarios.json'.\n    Devuelve:\n        Usuario: El objeto Usuario creado.\n    \"\"\"\n    os.system('cls')",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "login_user",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def login_user():\n    \"\"\"\n    Inicia sesión de un usuario.\n    La función solicita al usuario ingresar su nombre de usuario y luego\n    busca el usuario en el archivo 'db/usuarios.json'.\n    Devuelve:\n        Usuario: El objeto Usuario que inició sesión.\n    \"\"\"\n    username = validate_string_input(\"Ingrese su nombre de usuario: \")\n    with open(\"db/usuarios.json\", \"r\") as file:",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "user_menu",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def user_menu(user):\n    \"\"\"\n    Muestra el menú de opciones para un usuario.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    while True:\n        os.system('cls')\n        print(\"Menú de usuario\")\n        print(f\"Bienvenido, {user.name}!\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "create_album",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def create_album(user):\n    \"\"\"\n    Crea un álbum.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    name = validate_string_input(\"Ingrese el nombre del álbum: \")\n    description = validate_string_input(\"Ingrese la descripción del álbum: \")\n    cover = validate_string_input(\"Ingrese la URL de la portada del álbum: \")\n    published = validate_string_input(\"Ingrese la fecha de publicación del álbum: \")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "create_track",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def create_track():\n    \"\"\"\n    Crea una canción.\n    Devuelve:\n        Cancion: El objeto Cancion creado.\n    \"\"\"\n    name = validate_string_input(\"Ingrese el nombre de la canción: \")\n    duration = validate_string_input(\"Ingrese la duración de la canción: \")\n    link = validate_string_input(\"Ingrese el enlace de la canción: \")\n    with open(\"db/canciones.json\", \"r\") as file:",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "create_playlist",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def create_playlist(user):\n    \"\"\"\n    Crea una playlist.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    name = validate_string_input(\"Ingrese el nombre de la playlist: \")\n    description = validate_string_input(\"Ingrese la descripción de la playlist: \")\n    with open(\"db/canciones.json\", \"r\") as file:\n        all_songs = json.load(file)",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "edit_user",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def edit_user(user):\n    \"\"\"\n    Edita un usuario.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    print(\"Menú de edición de usuario\")\n    print(\"1. Editar nombre\")\n    print(\"2. Editar correo electrónico\")\n    print(\"3. Editar nombre de usuario\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "delete_account",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def delete_account(user):\n    \"\"\"\n    Elimina un usuario.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    confirm = input(\"Está a punto de eliminar su cuenta. ¿Está seguro? (s/n): \")\n    if confirm.lower() == 's':\n        with open(\"db/usuarios.json\", \"r\") as file:\n            users = json.load(file)",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_user_profile",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_user_profile(user):\n    \"\"\"\n    Busca un perfil de usuario por nombre.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    name = validate_string_input(\"Ingrese el nombre a buscar: \")\n    with open(\"db/usuarios.json\", \"r\") as file:\n        users = json.load(file)\n    matching_profiles = [user_profile for user_profile in users if name.lower() in user_profile[\"name\"].lower() and user_profile[\"username\"] != user.username]",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_user_profile",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_user_profile(user):\n    \"\"\"\n    Muestra el perfil de un usuario.\n    Parámetros:\n        user (Usuario): El objeto Usuario a mostrar.\n    \"\"\"\n    os.system('cls')\n    print(\"***Perfil de usuario***\")\n    print(f\"Nombre: {user.name}\")\n    if user.type == \"listener\":",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_songs_menu",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_songs_menu(user):\n    \"\"\"\n    Muestra el menú de búsqueda de canciones.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    while True:\n        os.system('cls')\n        print(\"Menú de búsqueda de canciones\")\n        print(\"1. Buscar por Nombre\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_songs_by_name",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_songs_by_name(user):\n    \"\"\"\n    Busca canciones por nombre.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    name = validate_string_input(\"Ingrese el nombre de la canción a buscar: \")\n    with open(\"db/canciones.json\", \"r\") as file:\n        songs = json.load(file)\n    matching_songs = [Cancion(**song) for song in songs if name.lower() in song[\"name\"].lower()]",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_songs_by_album",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_songs_by_album(user):\n    \"\"\"\n    Busca canciones por álbum.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    album_name = validate_string_input(\"Ingrese el nombre del álbum a buscar: \")\n    with open(\"db/albums.json\", \"r\") as file:\n        albums = json.load(file)\n    matching_albums = [Album(**album) for album in albums if album_name.lower() in album[\"name\"].lower()]",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_songs_by_artist",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_songs_by_artist(user):\n    \"\"\"\n    Busca canciones por artista.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    artist_name = validate_string_input(\"Ingrese el nombre del artista a buscar: \")\n    with open(\"db/usuarios.json\", \"r\") as file:\n        users = json.load(file)\n    matching_artists = [Usuario(**user) for user in users if artist_name.lower() in user[\"name\"].lower() and user[\"type\"] == \"musician\"]",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "search_songs_by_playlist",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def search_songs_by_playlist(user):\n    \"\"\"\n    Busca canciones por playlist.\n    Parámetros:\n        user (Usuario): El objeto Usuario que inició sesión.\n    \"\"\"\n    playlist_name = validate_string_input(\"Ingrese el nombre de la playlist a buscar: \")\n    with open(\"db/playlists.json\", \"r\") as file:\n        playlists = json.load(file)\n    matching_playlists = [Playlist(**playlist) for playlist in playlists if playlist_name.lower() in playlist[\"name\"].lower()]",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_album",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_album(album, user):\n    \"\"\"\n    Muestra un álbum.\n    Parámetros:\n        album (Album): El objeto Album a mostrar.\n    \"\"\"\n    os.system('cls')\n    print(f\"Álbum: {album.name}\")\n    print(f\"Artista: {album.artist}\")\n    print(f\"Descripción: {album.description}\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_album_songs",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_album_songs(album, user):\n    \"\"\"\n    Muestra las canciones de un álbum y permite al usuario seleccionar una para mostrar.\n    Parámetros:\n        album (Album): El objeto Album del cual mostrar las canciones.\n    \"\"\"\n    print(\"     ***Canciones del Álbum:***\")\n    songs = album.get_songs()\n    for count, song in enumerate(songs, start=1):\n        print(f\"{count}. {song.name}\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_artist",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_artist(artist, user):\n    \"\"\"\n    Muestra un artista.\n    Parámetros:\n        artist (Usuario): El objeto Usuario que representa al artista.\n    \"\"\"\n    os.system('cls')\n    print(f\"Artista: {artist.name}\")\n    while True:\n        print(\"1. Ver álbumes\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_artist_albums",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_artist_albums(artist, user):\n    \"\"\"\n    Muestra los álbumes de un artista y permite al usuario seleccionar uno para mostrar.\n    Parámetros:\n        artist (Usuario): El objeto Usuario que representa al artista.\n    \"\"\"\n    print(\"     ***Álbumes del Artista:***\")\n    albums = artist.get_albums()\n    for count, album in enumerate(albums, start=1):\n        print(f\"{count}. {album.name}\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_playlist",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_playlist(playlist, user):\n    \"\"\"\n    Muestra una playlist.\n    Parámetros:\n        playlist (Playlist): El objeto Playlist a mostrar.\n    \"\"\"\n    os.system('cls')\n    print(f\"Playlist: {playlist.name}\")\n    print(f\"Creada por: {playlist.creator}\")\n    print(f\"Descripción: {playlist.description}\")",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_song",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_song(song, user):\n    \"\"\"\n    Muestra una canción.\n    Parámetros:\n        song (Cancion): El objeto Cancion a mostrar.\n    \"\"\"\n    os.system('cls')\n    print(f\"Canción: {song.name}\")\n    while True:\n        if song.verify_if_liked(user):",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "show_statistics",
+        "kind": 2,
+        "importPath": "app.funciones",
+        "description": "app.funciones",
+        "peekOfCode": "def show_statistics():\n    usuarios, albumes, canciones, playlists = load_all_data()\n    musicians = pd.DataFrame([{'name': user.name, 'streams': user.get_total_played()} for user in usuarios if user.type == \"musician\"])\n    albums = pd.DataFrame([{'name': album.name, 'streams': album.get_total_streams()} for album in albumes])\n    songs = pd.DataFrame([{'name': song.name, 'streams': song.played} for song in canciones])\n    top_musicians = musicians.nlargest(5, 'streams')\n    print(top_musicians)\n    top_albums = albums.nlargest(5, 'streams')\n    print(top_albums)\n    top_songs = songs.nlargest(5, 'streams')",
+        "detail": "app.funciones",
+        "documentation": {}
+    },
+    {
+        "label": "Usuario",
+        "kind": 6,
+        "importPath": "app.modelos",
+        "description": "app.modelos",
+        "peekOfCode": "class Usuario():\n    \"\"\"\n    Una clase para representar un usuario.\n    ...\n    Atributos\n    ----------\n    id : str\n        un identificador único para el usuario\n    name : str\n        el nombre del usuario",
+        "detail": "app.modelos",
+        "documentation": {}
+    },
+    {
+        "label": "Album",
+        "kind": 6,
+        "importPath": "app.modelos",
+        "description": "app.modelos",
+        "peekOfCode": "class Album():\n    def __init__(self, id, name, description, cover, published, genre, artist, tracklist=[]):\n        \"\"\"\n        Crea una instancia de la clase Album.\n        Args:\n            id (int): El ID del álbum.\n            name (str): El nombre del álbum.\n            description (str): La descripción del álbum.\n            cover (str): La portada del álbum.\n            published (str): La fecha de publicación del álbum.",
+        "detail": "app.modelos",
+        "documentation": {}
+    },
+    {
+        "label": "Cancion",
+        "kind": 6,
+        "importPath": "app.modelos",
+        "description": "app.modelos",
+        "peekOfCode": "class Cancion():\n    def __init__(self, id, name, duration, link, played = 0, liked = 0):\n        \"\"\"\n        Constructor de la clase Cancion.\n        Args:\n            id (int): El ID de la canción.\n            name (str): El nombre de la canción.\n            duration (str): La duración de la canción.\n            link (str): El enlace de la canción.\n            played (int, optional): El número de veces que se ha reproducido la canción. Por defecto es 0.",
+        "detail": "app.modelos",
+        "documentation": {}
+    },
+    {
+        "label": "Playlist",
+        "kind": 6,
+        "importPath": "app.modelos",
+        "description": "app.modelos",
+        "peekOfCode": "class Playlist():\n    \"\"\"\n    Representa una lista de reproducción con sus atributos y métodos.\n    \"\"\"\n    def __init__(self, id, name, description, creator, tracks = []):\n        self.id = id\n        self.name = name\n        self.description = description\n        self.creator = creator\n        self.tracks = tracks",
+        "detail": "app.modelos",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    while True:     \n        os.system('cls')           \n        print(\"\\tBienvenido a la aplicación de música.\".upper())\n        print( \"***Menú principal***\".upper())       \n        print(\"1. Registrar nuevo usuario\")\n        print(\"2. Iniciar sesión\")\n        print(\"3. Restaurar datos por defecto\")\n        print(\"4. Estadisticas\")\n        print(\"5. Salir\")",
+        "detail": "main",
+        "documentation": {}
+    }
+]

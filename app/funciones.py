@@ -345,6 +345,7 @@ def user_menu(user):
     while True:
         os.system('cls')
         print("Menú de usuario")
+        print(f"Bienvenido, {user.name}!")
         if user.type == "listener":
             print("1. Buscar Perfil")
             print("2. Buscar Canciones por Nombre, Album, Artista o Playlist")
@@ -489,18 +490,20 @@ def create_playlist(user):
 
     with open("db/canciones.json", "r") as file:
         all_songs = json.load(file)
+        
+    all_songs = [Cancion(**song) for song in all_songs]
 
     tracks = []
     while True:
-        song_name_or_artist = input("Ingrese el nombre de una canción o artista para agregar a la playlist, o 'q' para terminar: ")
-        if song_name_or_artist.lower() == 'q':
+        song_name = input("Ingrese el nombre de una canción para agregar a la playlist, o 'q' para terminar: ")
+        if song_name.lower() == 'q':
             break
-        matching_songs = [song for song in all_songs if song_name_or_artist in (song['name'], song['artist'])]
+        matching_songs = [song for song in all_songs if song_name in song.name]
         if matching_songs:
             for i, song in enumerate(matching_songs, start=1):
-                print(f"{i}. {song['name']} by {song['artist']}")
+                print(f"{i}. {song}")
             song_number = int(input("Seleccione una canción para agregar a la playlist: "))
-            tracks.append(matching_songs[song_number - 1]['id'])
+            tracks.append(matching_songs[song_number - 1].id)
         else:
             print("No se encontraron canciones que coincidan.")
 
